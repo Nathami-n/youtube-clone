@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <Stack direction='row' justifyContent= 'space-between' alignItems= 'center' p={1}>
       <Link to='/' >
-      <YouTube sx={{color: 'red', fontSize: '35px'}}/>
+      <YouTube sx={{color: 'red', fontSize: '45px'}}/>
       </Link>
       <SearchBar/>
     </Stack>
