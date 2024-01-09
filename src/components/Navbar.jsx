@@ -6,11 +6,19 @@ import {SearchBar} from './'
 
 const Navbar = () => {
   return (
-    <Stack direction='row' justifyContent= 'space-between' alignItems= 'center' p={1}>
-      <Link to='/' >
+    <Stack 
+    direction='row'
+    justifyContent= 'space-between' 
+    alignItems= 'center'
+    p = {1} 
+    position='sticky' 
+    top = '0'
+     >
+      <Link to='/' sx ={{display: 'flex', alignItems:'center'}} >
       <YouTube sx={{color: 'red', fontSize: '45px'}}/>
       </Link>
       <SearchBar/>
+       
     </Stack>
     
     )
