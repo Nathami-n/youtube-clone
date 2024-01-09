@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect, useState} from "react";
 import { Stack, Box, Typography } from "@mui/material";
-import {Sidebar} from "./";
+import {Sidebar, Video} from "./";
 
 const Feed = () => {
+  const [toogledCategory, setToogledCategory] = useState('New')
+  useEffect(()=> {
+
+  })
+
   return (
     <Stack
       sx={{
@@ -16,7 +21,7 @@ const Feed = () => {
           px: { sx: 0, md: 2 },
         }}
       >
-        <Sidebar/>
+        <Sidebar toogledCategory = {toogledCategory} setToogledCategory = {setToogledCategory}/>
         <Typography
           className="copyright"
           variant="body2"
@@ -28,6 +33,7 @@ const Feed = () => {
           Copyright @2024 NATHAN GEORGE
         </Typography>
       </Box>
+      <Video />
     </Stack>
   );
 };
