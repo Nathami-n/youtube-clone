@@ -1,12 +1,20 @@
 import React, { useEffect, useState} from "react";
 import { Stack, Box, Typography } from "@mui/material";
 import {Sidebar, Video} from "./";
+import { FetchData } from '../assets/FetchData'
 
 const Feed = () => {
-  const [toogledCategory, setToogledCategory] = useState('New')
+  const [toogledCategory, setToogledCategory] = useState('New');
+  const [videos, setVideos] = useState(null);
   useEffect(()=> {
+    setVideos(null)
+    FetchData(`search?part=snippet&q=${toogledCategory}`)
+    .then((data)=> {
+      console.log(data);
+    })   
 
-  })
+
+  },[toogledCategory])
 
   return (
     <Stack
