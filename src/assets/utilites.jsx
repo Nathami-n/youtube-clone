@@ -11,7 +11,7 @@ import GraphicEqIcon from "@mui/icons-material/GraphicEq";
 import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
-
+import { CodeRounded } from "@mui/icons-material";
 export const categories = [
   { name: "New", icon: <HomeIcon /> },
   // { name: "JS Mastery", icon: <CodeIcon /> },
@@ -30,4 +30,5 @@ export const categories = [
   { name: "Comedy", icon: <TheaterComedyIcon /> },
   { name: "Gym", icon: <FitnessCenterIcon /> },
   { name: "Crypto", icon: <DeveloperModeIcon /> },
+  {name: 'TechMagic254', icon:<CodeRounded/>}
 ];
