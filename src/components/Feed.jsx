@@ -1,20 +1,17 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Stack, Box, Typography } from "@mui/material";
-import {Sidebar, Video} from "./";
-import { FetchData } from '../assets/FetchData'
+import { Sidebar, Videos} from "./";
+import { FetchData } from "../assets/FetchData";
 
 const Feed = () => {
-  const [toogledCategory, setToogledCategory] = useState('New');
-  const [videos, setVideos] = useState(null);
-  useEffect(()=> {
-    setVideos(null)
-    FetchData(`search?part=snippet&q=${toogledCategory}`)
-    .then((data)=> {
-      console.log(data);
-    })   
+  const [toogledCategory, setToogledCategory] = useState("New");
+  const [videos, setVideos] = useState([]);
 
-
-  },[toogledCategory])
+  useEffect(() => {
+     FetchData(`search?part=snippet&q=${toogledCategory}`).then((data) => {
+      setVideos(data.items);
+    });
+  }, [toogledCategory]);
 
   return (
     <Stack
@@ -24,12 +21,15 @@ const Feed = () => {
     >
       <Box
         sx={{
-          height: '92vh',
+          height: {sx: 'auto'},
           borderRight: "1px solid #3d3d3d",
           px: { sx: 0, md: 2 },
         }}
       >
-        <Sidebar toogledCategory = {toogledCategory} setToogledCategory = {setToogledCategory}/>
+        <Sidebar
+          toogledCategory={toogledCategory}
+          setToogledCategory={setToogledCategory}
+        />
         <Typography
           className="copyright"
           variant="body2"
@@ -41,7 +41,18 @@ const Feed = () => {
           Copyright @2024 NATHAN GEORGE
         </Typography>
       </Box>
-      <Video />
+      <Box 
+      p={2}
+      sx={{
+        overflowY: 'auto', 
+        height: '90vh',
+        flex: 2,
+        
+      
+      }}>
+      <Videos videos={videos} />
+      </Box>
+      
     </Stack>
   );
 };

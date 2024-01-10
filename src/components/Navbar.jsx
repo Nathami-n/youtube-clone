@@ -11,8 +11,13 @@ const Navbar = () => {
     justifyContent= 'space-between' 
     alignItems= 'center'
     p = {1} 
-    position='sticky' 
-    top = '0'
+    sx = {
+      {
+        position: 'sticky', 
+        top: 0,
+        background: 'black',
+      }
+    }
      >
       <Link to='/' sx ={{display: 'flex', alignItems:'center'}} >
       <YouTube sx={{color: 'red', fontSize: '45px'}}/>
