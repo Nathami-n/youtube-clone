@@ -1,9 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import { Stack, Box, Typography } from "@mui/material";
+import {Videos} from "./";
+import { FetchData } from "../assets/FetchData";
+import { useParams } from "react-router-dom";
 
 const SearchFeed = () => {
-  return (
-    <div>SearchFeed</div>
-  )
-}
+  const [videos, setVideos] = useState([]);
+  const searchTerm = useParams();
+  useEffect(() => {
+     FetchData(`search?part=snippet&q=${searchTerm}`).then((data) => {
+      setVideos(data.items);
+    });
+  }, [searchTerm]);
 
-export default SearchFeed
+  return (
+    <Box 
+    p={2}
+    sx={{
+      overflowY: 'auto', 
+      height: '90vh',
+      flex: 2,
+    }}>
+    <Videos videos={videos} />
+    </Box>
+  );
+};
+
+export default SearchFeed;
