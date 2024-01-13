@@ -7,7 +7,7 @@ import { FetchData } from "../assets/FetchData";
 
 const Channel = () => {
   const [channelDetail, setchannelDetail] = useState({});
-  const [videos, setvideos] = useState([]);
+  const [videos, setVideos] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
@@ -15,10 +15,11 @@ const Channel = () => {
       setchannelDetail(data?.items[0]);
     });
 
-    FetchData(`search?channelId=${id}part=snippet&order=date`).then((data) => {
-      setvideos(data?.items);
+    FetchData(`search?channelId=${id}&part=snippet&order=date`).then((data) => {
+      setVideos(data?.items);
     });
   }, [id]);
+  console.log(videos)
   return (
     <Box minHeight="95vh">
       <Box>
