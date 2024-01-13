@@ -28,6 +28,7 @@ const SearchBar = () => {
       boxShadow: 'none',
       display: 'flex',
       alignItems: 'center',
+      justifyContent: 'space-around'
     }}
 
     >
