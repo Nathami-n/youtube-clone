@@ -17,7 +17,7 @@ const Videodetails = () => {
       setVideoData(data.items[0]);
     });
 
-    FetchData(`videos?part=snippet&relatedToVideoId=${id}&type=video`).then(
+    FetchData(`search?part=snippet&relatedToVideoId=${id}&type=video`).then(
       (data) => {
         setVideos(data.items);
       }
@@ -72,9 +72,9 @@ const Videodetails = () => {
             </Stack>
           </Box>
         </Box>
-        {/* <Box>
+        <Box>
           <Videos videos={videos} direction="column" />
-        </Box> */}
+        </Box>
       </Stack>
     </Box>
   );
