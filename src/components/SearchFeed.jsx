@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Stack, Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import {Videos} from "./";
 import { FetchData } from "../assets/FetchData";
 import { useParams } from "react-router-dom";

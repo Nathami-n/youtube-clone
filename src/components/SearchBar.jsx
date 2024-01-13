@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { IconButton, Paper } from '@mui/material'
 import { Search } from '@mui/icons-material'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -35,7 +35,7 @@ const SearchBar = () => {
        type="text"
        placeholder='Search'
        value = {searchTerm}
-       onChange={(e) => {setSearchTerm(e.target.value)}}
+       onChange={(e) => setSearchTerm(e.target.value)}
        />
        
        <IconButton 

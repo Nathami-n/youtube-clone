@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Stack} from '@mui/material'
 import { Link} from 'react-router-dom'
-import { YouTube } from '@mui/icons-material'
+import { SlowMotionVideo } from '@mui/icons-material'
 import {SearchBar} from './'
 
 const Navbar = () => {
@@ -20,7 +20,7 @@ const Navbar = () => {
     }
      >
       <Link to='/' sx ={{display: 'flex', alignItems:'center'}} >
-      <YouTube sx={{color: 'red', fontSize: '45px'}}/>
+      <SlowMotionVideo sx={{color: 'red', fontSize: '45px'}}/>
       </Link>
       <SearchBar />
        

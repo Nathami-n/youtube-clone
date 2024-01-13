@@ -14,7 +14,7 @@ const App = () => {
       <Navbar/>
       <Routes>
         <Route exact path='/' element = {<Feed/>}></Route>
-        <Route exact  path = '/video/:id'  element = {<Videodetails/>} ></Route>
+        <Route exact  path = '/videos/:id'  element = {<Videodetails/>} ></Route>
         <Route exact path='/Channel/:id' element = {<Channel/>} ></Route>
         <Route exact path='/search/:searchTerm' element = {<SearchFeed/>} ></Route>
       </Routes>
